@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>PTSDK9 Canada | Grounded Canines — PTSD Service Dogs</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink:       #1a1a1a;
+    --soft:      #f7f5f2;
+    --white:     #ffffff;
+    --sage:      #7a9e8e;
+    --sage-dark: #4f7366;
+    --sage-pale: #e8f0ed;
+    --stone:     #8a8278;
+    --rule:      #ddd9d3;
+    --danger:    #b94f3c;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    line-height: 1.65;
+    color: var(--ink);
+    background: var(--white);
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(255,255,255,0.94);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--rule);
+    padding: 0 5vw;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 64px;
+  }
+
+  .nav-logo {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.15rem;
+    color: var(--sage-dark);
+    text-decoration: none;
+    letter-spacing: 0.01em;
+  }
+
+  .nav-links {
+    display: flex; gap: 2rem; align-items: center;
+    list-style: none;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--stone);
+    letter-spacing: 0.02em;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--sage-dark); }
+
+  .nav-cta {
+    background: var(--sage-dark) !important;
+    color: var(--white) !important;
+    padding: 0.45rem 1.1rem;
+    border-radius: 4px;
+    font-weight: 600 !important;
+    transition: background 0.2s !important;
+  }
+
+  .nav-cta:hover { background: var(--ink) !important; }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    background: var(--soft);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 100px 5vw 80px;
+    gap: 4rem;
+  }
+
+  .hero-text {}
+
+  .hero-eyebrow {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--sage-dark);
+    margin-bottom: 1.2rem;
+  }
+
+  .hero h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    line-height: 1.1;
+    color: var(--ink);
+    margin-bottom: 1.5rem;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--sage-dark);
+  }
+
+  .hero-sub {
+    font-size: 1.05rem;
+    color: var(--stone);
+    max-width: 42ch;
+    margin-bottom: 2.5rem;
+    font-weight: 300;
+    line-height: 1.8;
+  }
+
+  .hero-actions {
+    display: flex; gap: 1rem; flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    background: var(--sage-dark);
+    color: var(--white);
+    padding: 0.85rem 2rem;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: background 0.2s;
+    letter-spacing: 0.01em;
+  }
+
+  .btn-primary:hover { background: var(--ink); }
+
+  .btn-outline {
+    display: inline-block;
+    border: 1.5px solid var(--sage-dark);
+    color: var(--sage-dark);
+    padding: 0.85rem 2rem;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: all 0.2s;
+    letter-spacing: 0.01em;
+  }
+
+  .btn-outline:hover { background: var(--sage-dark); color: var(--white); }
+
+  /* Signature element: leaf-and-paw mark */
+  .hero-mark {
+    display: flex; align-items: center; justify-content: center;
+  }
+
+  .mark-circle {
+    width: clamp(260px, 35vw, 440px);
+    height: clamp(260px, 35vw, 440px);
+    border-radius: 50%;
+    background: var(--sage-pale);
+    display: flex; align-items: center; justify-content: center;
+    position: relative;
+  }
+
+  .mark-circle svg {
+    width: 55%; height: 55%; opacity: 0.85;
+  }
+
+  .mark-ring {
+    position: absolute; inset: -12px;
+    border-radius: 50%;
+    border: 1px solid var(--sage);
+    opacity: 0.35;
+  }
+
+  .mark-ring-2 {
+    position: absolute; inset: -26px;
+    border-radius: 50%;
+    border: 1px solid var(--sage);
+    opacity: 0.15;
+  }
+
+  /* ── SECTION SHARED ── */
+  section { padding: 100px 5vw; }
+
+  .section-eyebrow {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--sage-dark);
+    margin-bottom: 0.9rem;
+  }
+
+  .section-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+    line-height: 1.2;
+    color: var(--ink);
+    margin-bottom: 1.2rem;
+    max-width: 22ch;
+  }
+
+  .section-intro {
+    font-size: 1rem;
+    color: var(--stone);
+    max-width: 56ch;
+    margin-bottom: 3.5rem;
+    line-height: 1.8;
+    font-weight: 300;
+  }
+
+  /* ── TASKS ── */
+  .tasks { background: var(--white); }
+
+  .tasks-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    gap: 1.5px;
+    background: var(--rule);
+    border: 1.5px solid var(--rule);
+  }
+
+  .task-card {
+    background: var(--white);
+    padding: 2rem 1.8rem;
+    transition: background 0.2s;
+  }
+
+  .task-card:hover { background: var(--sage-pale); }
+
+  .task-icon {
+    width: 36px; height: 36px;
+    background: var(--sage-pale);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 1rem;
+  }
+
+  .task-icon svg { width: 18px; height: 18px; stroke: var(--sage-dark); fill: none; stroke-width: 1.8; }
+
+  .task-card h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.05rem;
+    color: var(--ink);
+    margin-bottom: 0.5rem;
+  }
+
+  .task-card p {
+    font-size: 0.875rem;
+    color: var(--stone);
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  /* ── PROCESS ── */
+  .process { background: var(--soft); }
+
+  .process-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    max-width: 760px;
+  }
+
+  .step {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 0 2rem;
+    position: relative;
+    padding-bottom: 3rem;
+  }
+
+  .step:last-child { padding-bottom: 0; }
+
+  .step-left {
+    display: flex; flex-direction: column; align-items: center;
+  }
+
+  .step-num {
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    background: var(--sage-dark);
+    color: var(--white);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+  }
+
+  .step-line {
+    width: 1px;
+    flex: 1;
+    background: var(--rule);
+    margin-top: 8px;
+  }
+
+  .step:last-child .step-line { display: none; }
+
+  .step-body { padding-top: 8px; }
+
+  .step-weeks {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--sage-dark);
+    background: var(--sage-pale);
+    padding: 0.2rem 0.6rem;
+    border-radius: 2px;
+    margin-bottom: 0.6rem;
+  }
+
+  .step-body h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.2rem;
+    color: var(--ink);
+    margin-bottom: 0.5rem;
+  }
+
+  .step-body p {
+    font-size: 0.9rem;
+    color: var(--stone);
+    line-height: 1.75;
+    font-weight: 300;
+    max-width: 54ch;
+  }
+
+  /* ── ELIGIBILITY ── */
+  .eligibility { background: var(--white); }
+
+  .elig-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    max-width: 900px;
+  }
+
+  .elig-col h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.15rem;
+    color: var(--ink);
+    margin-bottom: 1.2rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .elig-list {
+    list-style: none;
+    display: flex; flex-direction: column; gap: 0.7rem;
+  }
+
+  .elig-list li {
+    font-size: 0.9rem;
+    color: var(--stone);
+    font-weight: 300;
+    line-height: 1.6;
+    padding-left: 1.2rem;
+    position: relative;
+  }
+
+  .elig-list li::before {
+    content: '—';
+    position: absolute; left: 0;
+    color: var(--sage-dark);
+    font-size: 0.75rem;
+  }
+
+  /* ── APPLY / CTA ── */
+  .apply { background: var(--soft); }
+
+  .apply-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .apply-left {}
+
+  .apply-note {
+    font-size: 0.8rem;
+    color: var(--stone);
+    margin-top: 1.5rem;
+    padding: 1rem 1.2rem;
+    border-left: 2px solid var(--sage);
+    background: var(--sage-pale);
+    line-height: 1.7;
+  }
+
+  /* FORM */
+  .apply-form {
+    background: var(--white);
+    border: 1.5px solid var(--rule);
+    border-radius: 6px;
+    padding: 2.5rem;
+  }
+
+  .apply-form h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.3rem;
+    color: var(--ink);
+    margin-bottom: 0.4rem;
+  }
+
+  .form-sub {
+    font-size: 0.83rem;
+    color: var(--stone);
+    margin-bottom: 2rem;
+    line-height: 1.6;
+  }
+
+  .field {
+    margin-bottom: 1.3rem;
+  }
+
+  .field label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--ink);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    margin-bottom: 0.4rem;
+  }
+
+  .field input,
+  .field select,
+  .field textarea {
+    width: 100%;
+    border: 1.5px solid var(--rule);
+    border-radius: 4px;
+    padding: 0.65rem 0.85rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    color: var(--ink);
+    background: var(--white);
+    outline: none;
+    transition: border-color 0.2s;
+    appearance: none;
+  }
+
+  .field input:focus,
+  .field select:focus,
+  .field textarea:focus {
+    border-color: var(--sage-dark);
+  }
+
+  .field textarea { resize: vertical; min-height: 90px; }
+
+  .field-row {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
+  }
+
+  .checkbox-group {
+    display: flex; flex-direction: column; gap: 0.5rem;
+  }
+
+  .checkbox-item {
+    display: flex; align-items: flex-start; gap: 0.6rem;
+    font-size: 0.875rem; color: var(--stone); font-weight: 300; line-height: 1.5;
+  }
+
+  .checkbox-item input[type="checkbox"] {
+    width: 15px; height: 15px; flex-shrink: 0; margin-top: 3px;
+    accent-color: var(--sage-dark);
+  }
+
+  .radio-group {
+    display: flex; gap: 1rem; flex-wrap: wrap;
+  }
+
+  .radio-item {
+    display: flex; align-items: center; gap: 0.4rem;
+    font-size: 0.875rem; color: var(--stone); font-weight: 300;
+    cursor: pointer;
+  }
+
+  .radio-item input[type="radio"] {
+    width: 15px; height: 15px;
+    accent-color: var(--sage-dark);
+  }
+
+  .privacy-note {
+    font-size: 0.75rem;
+    color: var(--stone);
+    line-height: 1.6;
+    margin-top: 1.2rem;
+    border-top: 1px solid var(--rule);
+    padding-top: 1rem;
+  }
+
+  .btn-submit {
+    width: 100%;
+    background: var(--sage-dark);
+    color: var(--white);
+    border: none;
+    padding: 0.9rem;
+    border-radius: 4px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+    letter-spacing: 0.02em;
+    margin-top: 1.4rem;
+  }
+
+  .btn-submit:hover { background: var(--ink); }
+
+  /* ── MODAL CONFIRMATION ── */
+  .modal-overlay {
+    display: none;
+    position: fixed; inset: 0; z-index: 200;
+    background: rgba(26,26,26,0.55);
+    align-items: center; justify-content: center;
+  }
+
+  .modal-overlay.open { display: flex; }
+
+  .modal {
+    background: var(--white);
+    border-radius: 8px;
+    padding: 3rem 2.5rem;
+    max-width: 480px; width: 90%;
+    text-align: center;
+  }
+
+  .modal-icon {
+    width: 56px; height: 56px;
+    background: var(--sage-pale);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 1.5rem;
+  }
+
+  .modal-icon svg { width: 26px; height: 26px; stroke: var(--sage-dark); fill: none; stroke-width: 2; }
+
+  .modal h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.5rem;
+    color: var(--ink);
+    margin-bottom: 0.8rem;
+  }
+
+  .modal p {
+    font-size: 0.9rem;
+    color: var(--stone);
+    line-height: 1.7;
+    margin-bottom: 1.8rem;
+  }
+
+  .modal-close {
+    background: var(--sage-dark);
+    color: var(--white);
+    border: none;
+    padding: 0.75rem 2.5rem;
+    border-radius: 4px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 0.9rem;
+  }
+
+  /* ── PROFESSIONAL INTAKE ── */
+  .pro-intake {
+    margin-top: 2rem;
+    background: var(--ink);
+    color: var(--white);
+    border-radius: 6px;
+    padding: 2rem;
+  }
+
+  .pro-intake-badge {
+    display: inline-block;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--sage);
+    border: 1px solid var(--sage-dark);
+    padding: 0.2rem 0.6rem;
+    border-radius: 2px;
+    margin-bottom: 0.9rem;
+  }
+
+  .pro-intake-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.25rem;
+    color: var(--white);
+    margin-bottom: 0.7rem;
+    font-weight: 400;
+  }
+
+  .pro-intake-body {
+    font-size: 0.875rem;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.75;
+    font-weight: 300;
+  }
+
+  .pro-intake-link {
+    display: inline-block;
+    margin-top: 1.2rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--sage);
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    border-bottom: 1px solid var(--sage-dark);
+    padding-bottom: 1px;
+    transition: color 0.2s, border-color 0.2s;
+  }
+
+  .pro-intake-link:hover { color: var(--white); border-color: var(--white); }
+
+  /* ── APPLY NOTE (updated) ── */
+  /* ── CANADA LEGAL ── */
+  .legal-bar {
+    background: var(--sage-pale);
+    padding: 2rem 5vw;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .legal-bar p {
+    font-size: 0.8rem;
+    color: var(--stone);
+    max-width: 900px;
+    line-height: 1.75;
+    font-weight: 300;
+  }
+
+  .legal-bar strong { color: var(--ink); font-weight: 500; }
+
+  /* ── FOOTER ── */
+  footer {
+    padding: 3rem 5vw;
+    display: flex; justify-content: space-between; align-items: center;
+    border-top: 1px solid var(--rule);
+    gap: 1.5rem; flex-wrap: wrap;
+  }
+
+  .footer-logo {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1rem;
+    color: var(--sage-dark);
+  }
+
+  .footer-links {
+    display: flex; gap: 1.5rem; list-style: none;
+  }
+
+  .footer-links a {
+    font-size: 0.8rem; color: var(--stone); text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: var(--sage-dark); }
+
+  .footer-copy {
+    font-size: 0.78rem; color: var(--stone);
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 820px) {
+    .hero { grid-template-columns: 1fr; text-align: center; }
+    .hero-sub { max-width: none; margin-left: auto; margin-right: auto; }
+    .hero-actions { justify-content: center; }
+    .hero-mark { order: -1; }
+    .mark-circle { width: 200px; height: 200px; }
+    .elig-grid { grid-template-columns: 1fr; }
+    .apply-grid { grid-template-columns: 1fr; }
+    .field-row { grid-template-columns: 1fr; }
+    footer { flex-direction: column; text-align: center; }
+    .nav-links { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo"><span style="font-family:'Inter',sans-serif;font-weight:600;font-size:0.85rem;letter-spacing:0.08em;color:#4f7366;">PTSDK9</span> <span style="color:#8a8278;font-size:0.75rem;font-family:'Inter',sans-serif;font-weight:300;letter-spacing:0.04em;">Canada</span> <span style="color:#ddd9d3;margin:0 0.3rem;">|</span> Grounded Canines</a>
+  <ul class="nav-links">
+    <li><a href="#tasks">What Dogs Do</a></li>
+    <li><a href="#process">The Process</a></li>
+    <li><a href="#eligibility">Eligibility</a></li>
+    <li><a href="#apply" class="nav-cta">Apply Now</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-text">
+    <p class="hero-eyebrow">PTSDK9 Canada · Grounded Canines</p>
+    <h1>A dog trained<br>for what you've<br><em>been through.</em></h1>
+    <p class="hero-sub">We train psychiatric service dogs specifically for survivors of trauma — violence, assault, abuse, and complex PTSD. Available across Canada.</p>
+    <div class="hero-actions">
+      <a href="#apply" class="btn-primary">Apply for a Service Dog</a>
+      <a href="#apply" class="btn-outline">Train Your Own Dog</a>
+    </div>
+  </div>
+  <div class="hero-mark">
+    <div class="mark-circle">
+      <div class="mark-ring"></div>
+      <div class="mark-ring-2"></div>
+      <!-- Paw + leaf SVG -->
+      <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" fill="none">
+        <!-- Paw pads -->
+        <ellipse cx="60" cy="75" rx="22" ry="18" fill="#7a9e8e" opacity="0.7"/>
+        <ellipse cx="37" cy="58" rx="10" ry="12" fill="#7a9e8e" opacity="0.5"/>
+        <ellipse cx="83" cy="58" rx="10" ry="12" fill="#7a9e8e" opacity="0.5"/>
+        <ellipse cx="47" cy="42" rx="8" ry="10" fill="#7a9e8e" opacity="0.4"/>
+        <ellipse cx="73" cy="42" rx="8" ry="10" fill="#7a9e8e" opacity="0.4"/>
+        <!-- Leaf accent -->
+        <path d="M60 10 Q75 28 60 46 Q45 28 60 10Z" fill="#4f7366" opacity="0.35"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- TASKS -->
+<section class="tasks" id="tasks">
+  <p class="section-eyebrow">Trained Capabilities</p>
+  <h2 class="section-title">What a PTSD service dog actually does</h2>
+  <p class="section-intro">These are not comfort animals. Every task below is trained to a specific symptom of PTSD and recognized under Canadian law as a medical accommodation.</p>
+
+  <div class="tasks-grid">
+    <div class="task-card">
+      <div class="task-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 3C7 3 3 7 3 12s4 9 9 9 9-4 9-9-4-9-9-9z"/><path d="M12 8v4l3 3"/></svg>
+      </div>
+      <h3>Nightmare Interruption</h3>
+      <p>The dog detects rapid breathing, thrashing, or distress sounds during sleep and wakes you with a nudge or paw before the nightmare cycle sets in.</p>
+    </div>
+    <div class="task-card">
+      <div class="task-icon">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9 9l6 6M15 9l-6 6"/></svg>
+      </div>
+      <h3>Panic &amp; Anxiety Interrupt</h3>
+      <p>When the dog detects your physical signs of escalating anxiety — a trained response brings you back before a panic attack takes hold.</p>
+    </div>
+    <div class="task-card">
+      <div class="task-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+      </div>
+      <h3>Deep Pressure Therapy</h3>
+      <p>The dog applies body weight during dissociative episodes or flashbacks — grounding you to the present moment through physical sensation.</p>
+    </div>
+    <div class="task-card">
+      <div class="task-icon">
+        <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg>
+      </div>
+      <h3>Room Search &amp; Clear</h3>
+      <p>On command, the dog enters a room ahead of you, moves through the space, and returns with a signal that the area is safe — reducing hypervigilance triggers.</p>
+    </div>
+    <div class="task-card">
+      <div class="task-icon">
+        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg>
+      </div>
+      <h3>Crowd Buffering</h3>
+      <p>The dog positions behind or in front of you in public spaces — physically creating personal space so you can move through crowds without triggering threat responses.</p>
+    </div>
+    <div class="task-card">
+      <div class="task-icon">
+        <svg viewBox="0 0 24 24"><path d="M14.5 10c-.83 0-1.5-.67-1.5-1.5v-5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5z"/><path d="M20.5 10H19V8.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
+      </div>
+      <h3>Grounding During Flashbacks</h3>
+      <p>The dog nudges, paws, or licks on cue to interrupt dissociation or flashback episodes — pulling attention back to the physical present.</p>
+    </div>
+    <div class="task-card">
+      <div class="task-icon">
+        <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      </div>
+      <h3>Crisis Retrieval &amp; Alerts</h3>
+      <p>The dog retrieves a phone, medication, or alerts another person in the home during a crisis — giving you a path out of escalating moments.</p>
+    </div>
+    <div class="task-card">
+      <div class="task-icon">
+        <svg viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+      </div>
+      <h3>Medication Reminders</h3>
+      <p>Trained to alert at set times to prompt medication or routine check-ins — supporting consistency during low-functioning periods.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process" id="process">
+  <p class="section-eyebrow">How It Works</p>
+  <h2 class="section-title">The path from application to partnership</h2>
+  <p class="section-intro">Every placement and training program is built around you — your history, your symptoms, your life. Here is what the process looks like from start to finish.</p>
+
+  <div class="process-steps">
+    <div class="step">
+      <div class="step-left">
+        <div class="step-num">1</div>
+        <div class="step-line"></div>
+      </div>
+      <div class="step-body">
+        <span class="step-weeks">Weeks 1–2</span>
+        <h3>Application &amp; Intake</h3>
+        <p>You submit your application below. Our intake coordinator reviews your background, trauma history, and needs — then reaches out by email to schedule a private consultation. No details are shared without your consent.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-left">
+        <div class="step-num">2</div>
+        <div class="step-line"></div>
+      </div>
+      <div class="step-body">
+        <span class="step-weeks">Weeks 3–4</span>
+        <h3>Assessment &amp; Task Planning</h3>
+        <p>We work with you (and where possible, your mental health provider) to map your specific PTSD symptoms to a custom task list. This determines which training model your dog will follow and whether you are applying for a program dog or bringing your own.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-left">
+        <div class="step-num">3</div>
+        <div class="step-line"></div>
+      </div>
+      <div class="step-body">
+        <span class="step-weeks">Weeks 5–16</span>
+        <h3>Training Program</h3>
+        <p>Dogs undergo structured training aligned to your assessed needs. If you are owner-training your dog, you will work alongside a trainer throughout this period. Sessions are built around trauma-informed practice — we move at your pace.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-left">
+        <div class="step-num">4</div>
+        <div class="step-line"></div>
+      </div>
+      <div class="step-body">
+        <span class="step-weeks">Weeks 17–20</span>
+        <h3>Placement &amp; Team Training</h3>
+        <p>You and your dog train as a team in real environments — public spaces, transit, home routines. The goal is that you trust the dog and the dog knows you before any graduation.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-left">
+        <div class="step-num">5</div>
+        <div class="step-line"></div>
+      </div>
+      <div class="step-body">
+        <span class="step-weeks">Week 20+</span>
+        <h3>Graduation &amp; Ongoing Support</h3>
+        <p>Your team passes a Public Access Test in multiple locations. After graduation, we remain available for follow-up support, task refreshers, and any adjustments as your needs evolve.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ELIGIBILITY -->
+<section class="eligibility" id="eligibility">
+  <p class="section-eyebrow">Who Can Apply</p>
+  <h2 class="section-title">Eligibility &amp; what to expect</h2>
+  <p class="section-intro">We serve survivors across Canada. Our program is built for civilians who have experienced violence, assault, sexual abuse, domestic trauma, and other forms of complex PTSD — not only veterans or first responders.</p>
+
+  <div class="elig-grid">
+    <div class="elig-col">
+      <h3>You may be eligible if you…</h3>
+      <ul class="elig-list">
+        <li>Have a PTSD or CPTSD diagnosis from a licensed mental health provider</li>
+        <li>Are a survivor of domestic violence, sexual assault, forcible confinement, or prolonged abuse</li>
+        <li>Experience hypervigilance, nightmares, panic attacks, dissociation, or flashbacks</li>
+        <li>Are a Canadian resident (all provinces and territories)</li>
+        <li>Have the ability to provide a stable home environment for a dog</li>
+        <li>Are currently under the care of a mental health professional or willing to be</li>
+        <li>Are open to the full training program (approx. 20 weeks)</li>
+      </ul>
+    </div>
+    <div class="elig-col">
+      <h3>What we ask of you</h3>
+      <ul class="elig-list">
+        <li>Honesty in your application — the more we understand, the better we can match you</li>
+        <li>A commitment to the training process, even on difficult days</li>
+        <li>Willingness to involve your mental health provider where possible</li>
+        <li>A home assessment (conducted by email and video call)</li>
+        <li>For own-dog applicants: your dog must pass an initial temperament assessment</li>
+        <li>Participation in ongoing check-ins after placement</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- LEGAL BAR -->
+<div class="legal-bar">
+  <p><strong>Your rights under Canadian law.</strong> In Canada, psychiatric service dogs are protected under the <em>Canadian Human Rights Act</em> and the <em>Accessible Canada Act</em>. A qualified service dog team has the right to access any public space, housing, and transportation where the public is allowed. In Ontario, only a doctor's letter is currently required. We can advise you on documentation for your specific province upon application.</p>
+</div>
+
+<!-- APPLY -->
+<section class="apply" id="apply">
+  <div class="apply-grid">
+    <div class="apply-left">
+      <p class="section-eyebrow">Start Your Application</p>
+      <h2 class="section-title">You don't have to explain yourself to everyone. Just to us.</h2>
+      <p class="section-intro" style="margin-bottom: 1.5rem;">Fill in what you can. Every application is read by a person, not a system. We will follow up by email — not phone — within 5 business days.</p>
+
+      <div class="apply-note">
+        <strong style="display:block;margin-bottom:0.4rem;color:#1a1a1a;">Email is the only way to reach us.</strong>
+        Due to the high volume of requests we receive, we are not able to accept phone calls or walk-ins. All communication — intake, questions, and updates — is handled exclusively by email or through this form. This allows us to give every application the careful, private attention it deserves.<br><br>
+        📩 <strong>PTSDK9CANADA@protonmail.com</strong>
+      </div>
+
+      <!-- PROFESSIONAL INTAKE -->
+      <div class="pro-intake">
+        <div class="pro-intake-badge">For Clinicians &amp; Healthcare Providers</div>
+        <h3 class="pro-intake-title">Referring a patient?</h3>
+        <p class="pro-intake-body">Physicians, psychologists, social workers, and trauma therapists may contact us directly on behalf of a patient. Professional referrals receive a dedicated response and a clinical intake package, including our trauma assessment framework and documentation guidelines for service dog eligibility under provincial legislation.</p>
+        <p class="pro-intake-body" style="margin-top:0.8rem;">Please email with your name, professional designation, and your patient's consent to be referred. We treat all clinical correspondence with the same confidentiality as patient intake.</p>
+        <a href="mailto:PTSDK9CANADA@protonmail.com?subject=Professional Referral — Patient Intake" class="pro-intake-link">
+          Send a professional referral →
+        </a>
+      </div>
+    </div>
+
+    <div class="apply-form">
+      <h3>Application Form</h3>
+      <p class="form-sub">Takes about 10 minutes. If you'd prefer to reach out before filling this in, email us directly at <strong>PTSDK9CANADA@protonmail.com</strong> — that is the only way to contact us outside this form.</p>
+
+      <div class="field">
+        <label>I am applying to</label>
+        <div class="radio-group">
+          <label class="radio-item"><input type="radio" name="applyType" value="receive" checked /> Receive a trained service dog</label>
+          <label class="radio-item"><input type="radio" name="applyType" value="own" /> Train my current dog</label>
+        </div>
+      </div>
+
+      <div class="field-row">
+        <div class="field">
+          <label>First Name</label>
+          <input type="text" placeholder="First name" />
+        </div>
+        <div class="field">
+          <label>Last Name</label>
+          <input type="text" placeholder="Last name" />
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Email Address</label>
+        <input type="email" placeholder="your@email.com" />
+      </div>
+
+      <div class="field-row">
+        <div class="field">
+          <label>Province / Territory</label>
+          <select>
+            <option value="">Select province…</option>
+            <option>Alberta</option>
+            <option>British Columbia</option>
+            <option>Manitoba</option>
+            <option>New Brunswick</option>
+            <option>Newfoundland &amp; Labrador</option>
+            <option>Northwest Territories</option>
+            <option>Nova Scotia</option>
+            <option>Nunavut</option>
+            <option>Ontario</option>
+            <option>Prince Edward Island</option>
+            <option>Quebec</option>
+            <option>Saskatchewan</option>
+            <option>Yukon</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Age Range</label>
+          <select>
+            <option value="">Select…</option>
+            <option>18–24</option>
+            <option>25–34</option>
+            <option>35–44</option>
+            <option>45–54</option>
+            <option>55+</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Do you have a formal PTSD or CPTSD diagnosis?</label>
+        <div class="radio-group">
+          <label class="radio-item"><input type="radio" name="diagnosed" value="yes" /> Yes</label>
+          <label class="radio-item"><input type="radio" name="diagnosed" value="no" /> Not yet, but I'm in the process</label>
+          <label class="radio-item"><input type="radio" name="diagnosed" value="unsure" /> Unsure</label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Which of the following describe your trauma background? <span style="font-weight:300;text-transform:none;letter-spacing:0">(Select all that apply)</span></label>
+        <div class="checkbox-group">
+          <label class="checkbox-item"><input type="checkbox" /> Domestic violence or intimate partner violence</label>
+          <label class="checkbox-item"><input type="checkbox" /> Sexual assault or abuse</label>
+          <label class="checkbox-item"><input type="checkbox" /> Childhood abuse or neglect</label>
+          <label class="checkbox-item"><input type="checkbox" /> Forcible confinement or kidnapping</label>
+          <label class="checkbox-item"><input type="checkbox" /> Witnessed violence or a traumatic event</label>
+          <label class="checkbox-item"><input type="checkbox" /> Occupational trauma (first responder, healthcare, etc.)</label>
+          <label class="checkbox-item"><input type="checkbox" /> Prefer not to specify</label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Which symptoms affect your daily life most? <span style="font-weight:300;text-transform:none;letter-spacing:0">(Select all that apply)</span></label>
+        <div class="checkbox-group">
+          <label class="checkbox-item"><input type="checkbox" /> Nightmares or disturbed sleep</label>
+          <label class="checkbox-item"><input type="checkbox" /> Flashbacks or intrusive memories</label>
+          <label class="checkbox-item"><input type="checkbox" /> Panic attacks or severe anxiety</label>
+          <label class="checkbox-item"><input type="checkbox" /> Hypervigilance (constant threat scanning)</label>
+          <label class="checkbox-item"><input type="checkbox" /> Dissociation or feeling detached from reality</label>
+          <label class="checkbox-item"><input type="checkbox" /> Difficulty in public or crowded spaces</label>
+          <label class="checkbox-item"><input type="checkbox" /> Emotional dysregulation</label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Are you currently working with a mental health professional?</label>
+        <div class="radio-group">
+          <label class="radio-item"><input type="radio" name="mhp" value="yes" /> Yes</label>
+          <label class="radio-item"><input type="radio" name="mhp" value="no" /> No</label>
+          <label class="radio-item"><input type="radio" name="mhp" value="waitlist" /> On a waitlist</label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Is there anything else you'd like us to know? <span style="font-weight:300;text-transform:none;letter-spacing:0">(Optional)</span></label>
+        <textarea placeholder="Your living situation, what you've already tried, or anything that feels relevant…"></textarea>
+      </div>
+
+      <p class="privacy-note">Your application is sent securely to our intake team only. We will reply by email within 5 business days. We do not take phone calls — email is the only way to reach us. Write to us at <strong>PTSDK9CANADA@protonmail.com</strong></p>
+
+      <button class="btn-submit" onclick="handleSubmit()">Submit Application</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">PTSDK9 Canada · Grounded Canines</div>
+  <ul class="footer-links">
+    <li><a href="#tasks">What Dogs Do</a></li>
+    <li><a href="#process">The Process</a></li>
+    <li><a href="#eligibility">Eligibility</a></li>
+    <li><a href="#apply">Apply</a></li>
+    <li><a href="mailto:PTSDK9CANADA@protonmail.com">PTSDK9CANADA@protonmail.com</a></li>
+  </ul>
+  <p class="footer-copy">© 2025 PTSDK9 Canada · Grounded Canines. Serving all of Canada.</p>
+</footer>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modal">
+  <div class="modal">
+    <div class="modal-icon">
+      <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+    </div>
+    <h3>Application received.</h3>
+    <p>Thank you for trusting us with your story. Our intake coordinator will review your application and reach out to you by email within 5 business days.<br><br>If you have questions in the meantime, write to us at <strong>PTSDK9CANADA@protonmail.com</strong></p>
+    <button class="modal-close" onclick="closeModal()">Close</button>
+  </div>
+</div>
+
+<script>
+  function handleSubmit() {
+    document.getElementById('modal').classList.add('open');
+  }
+  function closeModal() {
+    document.getElementById('modal').classList.remove('open');
+  }
+  document.getElementById('modal').addEventListener('click', function(e) {
+    if (e.target === this) closeModal();
+  });
+</script>
+</body>
+</html>
